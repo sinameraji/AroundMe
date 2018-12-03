@@ -2,6 +2,7 @@ package my.edu.um.fsktm.arounddick;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,9 @@ public class SingleArticle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.single_article);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         populateCommentsList();
 
@@ -64,8 +68,6 @@ public class SingleArticle extends AppCompatActivity {
 
             }
         });
-
-
 
     }
 
