@@ -15,11 +15,12 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 
 public class SingleArticle extends AppCompatActivity {
-
+    private  CommentsListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.single_article);
+
         populateCommentsList();
 
         ListView listView = (ListView) findViewById(R.id.lvReviews);
@@ -58,43 +59,26 @@ public class SingleArticle extends AppCompatActivity {
         final RatingBar rate = (RatingBar) findViewById(R.id.ratingBar);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                addNewReview(review,"userid", review.getText().toString(), rate, "");
+                Comment cm = new Comment("userid", review.getText().toString(), rate.getRating(), "");
+                //TODO: write comment to firebase
+
             }
         });
+
+
+
     }
 
-    private void addNewReview(EditText review, String userid, String s, RatingBar rating, String s1) {
-        Comment comment = new Comment("userid", review.getText().toString(), (float)rating.getRating(), "");
-        ArrayList<Comment> arrayOfUsers = Comment.getReviews();
-        // Create the adapter to convert the array to views
-        CommentsListAdapter adapter= new CommentsListAdapter(this, arrayOfUsers);
-        adapter.add(comment);
-        ListView listView = (ListView) findViewById(R.id.lvReviews);
-        listView.setAdapter(adapter);
 
-        setListViewHeightBasedOnChildren(listView);
-    }
 
     private void populateCommentsList() {
-        // Construct the data source
-        ArrayList<Comment> arrayOfUsers = Comment.getReviews();
+        final ArrayList<Comment> arrayOfReviews= Comment.getReviews();
         // Create the adapter to convert the array to views
-        CommentsListAdapter adapter= new CommentsListAdapter(this, arrayOfUsers);
+        adapter= new CommentsListAdapter(this, arrayOfReviews);
         // Attach the adapter to a ListView
         ListView listView = (ListView) findViewById(R.id.lvReviews);
-//        listView.setOnTouchListener(new View.OnTouchListener() {
-//            // Setting on Touch Listener for handling the touch inside ScrollView
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                // Disallow the touch request for parent scroll on touch of child view
-//                v.getParent().requestDisallowInterceptTouchEvent(true);
-//                return false;
-//            }
-//        });
         listView.setAdapter(adapter);
-
         setListViewHeightBasedOnChildren(listView);
-
     }
 
     /**** Method for Setting the Height of the ListView dynamically.
