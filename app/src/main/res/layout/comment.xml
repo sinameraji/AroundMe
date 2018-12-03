@@ -3,8 +3,6 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    android:paddingRight="20dp"
-    android:paddingLeft="20dp"
     android:paddingBottom="10dp"
     android:layout_weight="1">
 
@@ -13,7 +11,7 @@
         android:id="@+id/avatar"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/sina" />
+        android:src="@drawable/ic_launcher_foreground" />
 
     <LinearLayout
         android:orientation="vertical"
