@@ -11,17 +11,18 @@ import android.widget.ScrollView;
 
 import java.util.ArrayList;
 
-public class Comments extends AppCompatActivity {
+public class SingleArticle extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.single_article);
         populateCommentsList();
+
         ListView listView = (ListView) findViewById(R.id.lvReviews);
         final ScrollView scrollViewParent = (ScrollView)findViewById(R.id.rlLayout);
         View customView = (View)findViewById(R.id.customView);
-
+        // Merge the scroll function of ListView && ScrollView
         customView.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
