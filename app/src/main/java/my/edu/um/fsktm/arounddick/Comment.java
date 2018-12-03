@@ -10,6 +10,7 @@ public class Comment {
     public String articleID;
     public float rating;
     public String avatar;
+    public static ArrayList<Comment> comments;
 
     public Comment(String userID, String comment,float rating, String avatar){
         this.userID = userID;
@@ -17,6 +18,7 @@ public class Comment {
         this.rating = rating;
         this.avatar = avatar;
         articleID = "xyz";
+        comments.add(this);
     }
 
     public String getUserID(){
@@ -33,7 +35,7 @@ public class Comment {
     }
 
     public static ArrayList<Comment> getReviews(){
-        ArrayList<Comment> comments = new ArrayList<Comment>();
+        comments = new ArrayList<Comment>();
         comments.add(new Comment("sina", "nice place", 5, ""));
         comments.add(new Comment("kamwoh", "okay place",4, ""));
         comments.add(new Comment("chiayi", "shit place",1, ""));

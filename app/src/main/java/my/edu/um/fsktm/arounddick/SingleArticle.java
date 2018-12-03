@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.ScrollView;
 
 import java.util.ArrayList;
@@ -49,6 +52,27 @@ public class SingleArticle extends AppCompatActivity {
                 }
             }
         });
+
+        final Button button = findViewById(R.id.submit);
+        final EditText review = (EditText) findViewById(R.id.review);
+        final RatingBar rate = (RatingBar) findViewById(R.id.ratingBar);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addNewReview(review,"userid", review.getText().toString(), rate, "");
+            }
+        });
+    }
+
+    private void addNewReview(EditText review, String userid, String s, RatingBar rating, String s1) {
+        Comment comment = new Comment("userid", review.getText().toString(), (float)rating.getRating(), "");
+        ArrayList<Comment> arrayOfUsers = Comment.getReviews();
+        // Create the adapter to convert the array to views
+        CommentsListAdapter adapter= new CommentsListAdapter(this, arrayOfUsers);
+        adapter.add(comment);
+        ListView listView = (ListView) findViewById(R.id.lvReviews);
+        listView.setAdapter(adapter);
+
+        setListViewHeightBasedOnChildren(listView);
     }
 
     private void populateCommentsList() {
