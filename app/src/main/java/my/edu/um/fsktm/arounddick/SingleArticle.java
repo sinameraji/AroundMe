@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -15,6 +16,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
+
+import com.google.android.gms.maps.MapView;
 
 import java.util.ArrayList;
 
@@ -137,5 +140,51 @@ public class SingleArticle extends AppCompatActivity {
         ViewGroup.LayoutParams params = listView.getLayoutParams();
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
+    }
+
+    protected MapView mMapView;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mMapView != null) {
+            mMapView.onResume();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (mMapView != null) {
+            mMapView.onPause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mMapView != null) {
+            try {
+                mMapView.onDestroy();
+            } catch (NullPointerException e) {
+                Log.e("tag", "Error while attempting MapView.onDestroy(), ignoring exception", e);
+            }
+        }
+        super.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        if (mMapView != null) {
+            mMapView.onLowMemory();
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (mMapView != null) {
+            mMapView.onSaveInstanceState(outState);
+        }
     }
 }
