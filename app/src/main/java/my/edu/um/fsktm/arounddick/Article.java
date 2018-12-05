@@ -17,34 +17,6 @@ public class Article {
     public double averageRating;
     public String cover;
 
-//    public Article(String tag, JSONObject jsonObject) throws JSONException {
-//        JSONObject location = jsonObject.getJSONObject("geometry").getJSONObject("location");
-//        lat = location.getDouble("lat");
-//        lng = location.getDouble("lng");
-//
-//        articleId = jsonObject.getString("place_id");
-//        author = "Google";
-//
-//        cover = jsonObject.has("photos") ?
-//                jsonObject.getJSONArray("photos").getJSONObject(0)
-//                        .getString("photo_reference") : "";
-//
-//        //Todo: un-comment the next 2 lines
-//
-//        //        coverUrlConstructed = false;
-//        //        fromFirebase = false;
-//
-//        title = jsonObject.getString("name");
-//        description = "";
-//        averageRating = 0;
-//
-//        //Todo: uncomment the next line
-////        comments = new ArrayList<>();
-//
-//        this.tag = tag;
-//    }
-
-
     public Article(String title, String desc, String tag, double lat, double lng, String articleId) {
         this.lat = lat;
         this.lng = lng;

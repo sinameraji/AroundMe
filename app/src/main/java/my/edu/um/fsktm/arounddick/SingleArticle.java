@@ -21,6 +21,7 @@ import com.google.android.gms.maps.MapView;
 
 import java.util.ArrayList;
 
+
 public class SingleArticle extends AppCompatActivity {
     private  CommentsListAdapter adapter;
     @Override
