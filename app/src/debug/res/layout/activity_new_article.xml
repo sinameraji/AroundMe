@@ -22,11 +22,10 @@
         android:text="Location name" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text="" />
 
     <TextView
@@ -36,7 +35,7 @@
         android:text="Location description" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -49,7 +48,7 @@
         android:text="Category" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -60,7 +59,7 @@
         android:text="Lattitude" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/lat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -68,7 +67,7 @@
         android:text="" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/longt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Longitude" />
