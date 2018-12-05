@@ -67,13 +67,13 @@
         android:text="" />
 
     <TextView
-        android:id="@+id/longt"
+        android:id="@+id/f"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Longitude" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/longt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -90,4 +90,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imgView"/>
 </LinearLayout>

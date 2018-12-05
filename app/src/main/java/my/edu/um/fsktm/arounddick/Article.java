@@ -29,6 +29,10 @@ public class Article {
         this.tag = tag;
     }
 
+    public String toString(){
+        return title + ", " + description + ", " + tag + ", " +lat+ ", " +lng+ ", " +articleId;
+    }
+
     public static ArrayList<Article> getArticles(){
         ArrayList<Article> articles = new ArrayList<Article>();
         articles.add(new Article("KLCC", "twin towers", "landmark", 3.1466, 101.6958, "klcc123"));
