@@ -64,7 +64,7 @@ public class NewArticle extends AppCompatActivity {
     }
 // TODO: firebase image upload – needs permissions and dependency to be added
     // refer to here https://code.tutsplus.com/tutorials/image-upload-to-firebase-in-android-application--cms-29934
-    
+
 //    private void uploadImage() {
 //
 //        if(filePath != null)
@@ -79,14 +79,14 @@ public class NewArticle extends AppCompatActivity {
 //                        @Override
 //                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 //                            progressDialog.dismiss();
-//                            Toast.makeText(MainActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(NewArticle.this, "Uploaded", Toast.LENGTH_SHORT).show();
 //                        }
 //                    })
 //                    .addOnFailureListener(new OnFailureListener() {
 //                        @Override
 //                        public void onFailure(@NonNull Exception e) {
 //                            progressDialog.dismiss();
-//                            Toast.makeText(MainActivity.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(NewArticle.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
 //                        }
 //                    })
 //                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
